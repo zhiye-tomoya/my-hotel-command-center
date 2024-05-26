@@ -16,7 +16,7 @@ export const SideMenu = () => {
 
 const Menu = ({ menu }: { menu: string }) => {
   return (
-    <Link className="flex justify-center w-full p-2 text-xl font-semibold hover:bg-accent hover:text-slate-500 " href="#">
+    <Link className={`flex justify-center w-full p-2 text-xl font-semibold hover:bg-accent hover:text-slate-500 ${menu === "Dashboard" && "bg-accent text-slate-500"}`} href="#">
       {menu}
     </Link>
   );

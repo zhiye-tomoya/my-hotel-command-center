@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-export const StayRoomList = () => {
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+// import { Pagination } from "./Pagination";
+import { FloorSearch } from "./FloorSearch";
+export const DRoomList = () => {
   return (
     <>
       <div className="flex flex-col-reverse md:flex-col  md:grid md:mt-[7.7rem] md:grid-cols-4 gap-2">
@@ -17,6 +19,7 @@ export const StayRoomList = () => {
         <RoomCard rN={"305"} s={"stay"} cS={"toDo"} />
         <RoomCard rN={"308"} s={"stay"} cS={"checked"} />
       </div>
+      {/* <Pagination /> */}
     </>
   );
 };
@@ -44,14 +47,18 @@ const RoomCard = ({ rN, s, cS }: { rN: string; s: string; cS: string }) => {
   const [bC, setBG] = useState("");
 
   return (
-    <Card className={`${s !== "stay" && "hidden"} relative col-span-1 mt-[0.5rem]`}>
+    <Card className={`${s !== "depature" && "hidden"} relative col-span-1 mt-[0.5rem]`}>
       <span className={`relative top-2 left-[15rem] bg-${bC} px-[0.6rem] rounded-full ml-[0.5rem]`}></span>
       <CardHeader>
         <CardTitle>{rN}</CardTitle>
+        {/* <CardDescription>Card Description</CardDescription> */}
       </CardHeader>
       <CardContent>
         <p>{cS}</p>
       </CardContent>
+      {/* <CardFooter>
+        <p>Card Footer</p>
+      </CardFooter> */}
     </Card>
   );
 };
