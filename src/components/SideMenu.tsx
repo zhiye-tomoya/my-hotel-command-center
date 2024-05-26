@@ -7,7 +7,7 @@ export const SideMenu = () => {
       <div className="flex flex-col gap-y-6 items-start mt-[2rem]">
         <div className="w-full flex justify-center text-6xl font-extrabold">Logo</div>
         {menus.map((menu) => {
-          return <Menu menu={menu} />;
+          return <Menu key={menu} menu={menu} />;
         })}
       </div>
     </div>

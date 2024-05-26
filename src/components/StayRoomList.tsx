@@ -4,10 +4,7 @@ import { FloorSearch } from "./FloorSearch";
 export const StayRoomList = () => {
   return (
     <>
-      <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-2">
-        <div className="md:col-span-4">
-          <FloorSearch />
-        </div>
+      <div className="flex flex-col-reverse md:flex-col  md:grid md:mt-[4.5rem] md:grid-cols-4 gap-2">
         <RoomCard />
         <RoomCard />
         <RoomCard />
