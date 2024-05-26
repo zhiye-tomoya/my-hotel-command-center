@@ -1,27 +1,33 @@
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { StayRoomList } from "@/components/StayRoomList";
+import Link from "next/link";
+import { SideMenu } from "@/components/SideMenu";
 
 export default function Home() {
   return (
     <main className="">
       <div className="flex min-h-[100vh] max-w-full">
         <div className="hidden md:block">
-          <div className="bg-red-200 fixed top-0 left-0 h-full w-[300px] items-center justify-center p-6">
-            <p>dddd</p>
-            <p>dddd</p>
-            <p>dddd</p>
-            <p>dddd</p>
-            <p>dddd</p>
-            <p>dddd</p>
-          </div>
+          <SideMenu />
         </div>
         <div className="w-full md:ml-[300px]">
           <div className="flex h-full justify-center">
             <Tabs defaultValue="stay" className="w-[400px] md:w-full m-[1rem]">
               <TabsList>
-                <TabsTrigger value="stay">stay</TabsTrigger>
-                <TabsTrigger value="out">out</TabsTrigger>
+                <TabsTrigger value="all">All</TabsTrigger>
+                <TabsTrigger value="stay">
+                  Stay<span className="bg-green-500 p-[0.4rem] rounded-full ml-[0.5rem]"></span>
+                </TabsTrigger>
+                <TabsTrigger value="out">
+                  Out<span className="bg-orange-500 p-[0.4rem] rounded-full ml-[0.5rem]"></span>
+                </TabsTrigger>
+                <TabsTrigger value="depature">
+                  Depature<span className="bg-blue-500 p-[0.4rem] rounded-full ml-[0.5rem]"></span>
+                </TabsTrigger>
+                <TabsTrigger value="vacant">
+                  Vacant<span className="bg-green-500 p-[0.4rem] rounded-full ml-[0.5rem]"></span>
+                </TabsTrigger>
               </TabsList>
               <TabsContent value="stay">
                 <StayRoomList />
