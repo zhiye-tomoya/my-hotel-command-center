@@ -16,7 +16,7 @@ export default function Home() {
             <p>dddd</p>
           </div>
         </div>
-        <div className="w-full m-[1rem] md:ml-[300px]">
+        <div className="w-full md:ml-[300px]">
           <div className="flex h-full justify-center">
             <Tabs defaultValue="stay" className="w-[400px] md:w-full m-[1rem]">
               <TabsList>

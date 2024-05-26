@@ -4,7 +4,7 @@ import { FloorSearch } from "./FloorSearch";
 export const StayRoomList = () => {
   return (
     <>
-      <div className="grid sm:grid-cols-1 md:grid-cols-4 mr-[1rem]">
+      <div className="grid sm:grid-cols-1 md:grid-cols-4">
         <div className="md:col-span-4">
           <FloorSearch />
         </div>
@@ -42,7 +42,7 @@ const RoomCard = () => {
   return (
     <Card className="col-span-1 mt-[0.5rem]">
       <CardHeader>
-        <CardTitle>Stay Card Title</CardTitle>
+        <CardTitle>Room Num</CardTitle>
         <CardDescription>Card Description</CardDescription>
       </CardHeader>
       <CardContent>
