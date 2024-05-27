@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SideMenu } from "@/components/SideMenu";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -17,7 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-background min-h-screen font-sans antialiased", inter.variable)}>{children}</body>
+      <body className={cn("bg-background min-h-screen font-sans antialiased", inter.variable)}>
+        {" "}
+        <main className="flex min-h-[100vh] max-w-full">
+          <div className="hidden md:block">
+            <SideMenu />
+          </div>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
