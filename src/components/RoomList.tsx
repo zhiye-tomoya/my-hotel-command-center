@@ -1,27 +1,21 @@
-"use client";
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-export const RoomList = () => {
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Room } from "../../src/type";
+
+export const RoomList = ({ rooms, floor }: { rooms: Room[]; floor: string }) => {
   return (
     <>
       <div className="flex flex-col-reverse md:flex-col  md:grid md:mt-[7.7rem] md:grid-cols-4 gap-2">
-        <RoomCard rN={"101"} s={"stay"} cS={"onGoing"} />
-        <RoomCard rN={"103"} s={"out"} cS={"done"} />
-        <RoomCard rN={"106"} s={"out"} cS={"checked"} />
-        <RoomCard rN={"201"} s={"depature"} cS={"toDo"} />
-        <RoomCard rN={"202"} s={"depature"} cS={"onGoing"} />
-        <RoomCard rN={"203"} s={"vacant"} cS={"onGoing"} />
-        <RoomCard rN={"204"} s={"vacant"} cS={"toDo"} />
-        <RoomCard rN={"206"} s={"out"} cS={"done"} />
-        <RoomCard rN={"301"} s={"stay"} cS={"onGoing"} />
-        <RoomCard rN={"305"} s={"stay"} cS={"toDo"} />
-        <RoomCard rN={"308"} s={"stay"} cS={"checked"} />
+        {rooms.map(({ rN, s, cS, floor }) => {
+          console.log(floor);
+          return <RoomCard key={rN} rN={rN} s={s} cS={cS} floor={floor} />;
+        })}
       </div>
     </>
   );
 };
 
-const RoomCard = ({ rN, s, cS }: { rN: string; s: string; cS: string }) => {
+const RoomCard = ({ rN, s, cS, floor }: { rN: string; s: string; cS: string; floor: number }) => {
   useEffect(() => {
     switch (s) {
       case "stay":
@@ -45,7 +39,7 @@ const RoomCard = ({ rN, s, cS }: { rN: string; s: string; cS: string }) => {
 
   return (
     <Card className="relative col-span-1 mt-[0.5rem]">
-      <span className={`relative top-2 left-[15rem] bg-${bC} px-[0.6rem] rounded-full ml-[0.5rem]`}></span>
+      <span className={`relative top-2 left-[18.7rem] md:left-[15rem] bg-${bC} px-[0.6rem] rounded-full ml-[0.5rem]`}></span>
       <CardHeader>
         <CardTitle>{rN}</CardTitle>
       </CardHeader>
