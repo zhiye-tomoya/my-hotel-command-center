@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Room } from "../../src/type";
 
-export const RoomList = ({ rooms, floor }: { rooms: Room[]; floor: string }) => {
+export const RoomList = ({ rooms }: { rooms: Room[] }) => {
   return (
     <>
       <div className="flex flex-col-reverse md:flex-col  md:grid md:mt-[7.7rem] md:grid-cols-4 gap-2">
@@ -15,7 +15,7 @@ export const RoomList = ({ rooms, floor }: { rooms: Room[]; floor: string }) => 
   );
 };
 
-const RoomCard = ({ rN, s, cS, floor }: { rN: string; s: string; cS: string; floor: number }) => {
+const RoomCard = ({ rN, s, cS }: { rN: string; s: string; cS: string; floor: number }) => {
   useEffect(() => {
     switch (s) {
       case "stay":
@@ -38,14 +38,16 @@ const RoomCard = ({ rN, s, cS, floor }: { rN: string; s: string; cS: string; flo
   const [bC, setBG] = useState("");
 
   return (
-    <Card className="relative col-span-1 mt-[0.5rem]">
-      <span className={`relative top-2 left-[18.7rem] md:left-[15rem] bg-${bC} px-[0.6rem] rounded-full ml-[0.5rem]`}></span>
-      <CardHeader>
-        <CardTitle>{rN}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>{cS}</p>
-      </CardContent>
-    </Card>
+    <>
+      <Card className="relative col-span-1 mt-[0.5rem]">
+        <span className={`relative top-2 left-[18.7rem] md:left-[15rem] bg-${bC} px-[0.6rem] rounded-full ml-[0.5rem]`}></span>
+        <CardHeader>
+          <CardTitle>{rN}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>{cS}</p>
+        </CardContent>
+      </Card>
+    </>
   );
 };

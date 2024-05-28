@@ -82,7 +82,7 @@ export default function Home() {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="all">
-            <RoomList rooms={rooms} floor={floor} />
+            <RoomList rooms={rooms} />
           </TabsContent>
           <TabsContent value="stay">
             <StayRoomList rooms={stayRooms} />
