@@ -6,7 +6,7 @@ export const VRoomList = ({ rooms }: { rooms: Room[] }) => {
   return (
     <>
       <div className="flex flex-col-reverse md:flex-col  md:grid md:mt-[7.7rem] md:grid-cols-4 gap-2">
-        {rooms.map(({ rN, s, cS, floor }) => {
+        {rooms.map(({ rN, s, cS }) => {
           return <RoomCard key={rN} rN={rN} s={s} cS={cS} />;
         })}
       </div>
