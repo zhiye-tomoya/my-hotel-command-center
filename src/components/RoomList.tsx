@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Room } from "../../src/type";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const RoomList = ({ rooms }: { rooms: Room[] }) => {
   return (
@@ -39,15 +40,20 @@ const RoomCard = ({ rN, s, cS }: { rN: string; s: string; cS: string; floor: num
 
   return (
     <>
-      <Card className="relative col-span-1 mt-[0.5rem]">
-        <span className={`relative top-2 left-[18.7rem] md:left-[15rem] bg-${bC} px-[0.6rem] rounded-full ml-[0.5rem]`}></span>
-        <CardHeader>
-          <CardTitle>{rN}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>{cS}</p>
-        </CardContent>
-      </Card>
+      <Sheet>
+        <SheetTrigger className="z-0 md:z-30">
+          <Card className="col-span-1 mt-[0.5rem] hover:bg-slate-100">
+            <CardHeader className="gap-6">
+              <span className={`bg-${bC} text-xl px-[0.6rem] rounded-full ml-[0.5rem]`}>{s}</span>
+              <CardTitle>{rN}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>{cS}</p>
+            </CardContent>
+          </Card>
+        </SheetTrigger>
+        <SheetContent side={"bottom"} className="w-full h-[10rem] md:h-[20rem]"></SheetContent>
+      </Sheet>
     </>
   );
 };
